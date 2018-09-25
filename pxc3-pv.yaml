@@ -45,7 +45,7 @@ spec:
           envFrom:
           - configMapRef:
               name: mysql-config
-        volumeMounts:
+          volumeMounts:
             - name: mysql-persistent-storage-3
               mountPath: /var/lib
           securityContext:
