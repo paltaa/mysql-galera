@@ -40,11 +40,6 @@ spec:
             - containerPort: 4444
             - containerPort: 4567
             - containerPort: 4568
-          env:
-            - name: GALERA_CLUSTER
-              value: "true"
-            - name: WSREP_CLUSTER_ADDRESS
-              value: gcomm://
           envFrom:
           - configMapRef:
               name: mysql-config
