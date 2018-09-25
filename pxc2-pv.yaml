@@ -42,8 +42,8 @@ spec:
             - containerPort: 4567
             - containerPort: 4568
           envFrom:
-          - configMapRef:
-              name: mysql-config
+          - secretRef:
+              name: mysql-secret
           volumeMounts:
             - name: mysql-persistent-storage-2
               mountPath: /var/lib
