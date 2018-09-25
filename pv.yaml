@@ -1,0 +1,78 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+ name: mysql-db-pv
+ namespace: default
+ labels:
+   type: local
+spec:
+ capacity:
+   storage: 15Gi
+ accessModes:
+   - ReadWriteOnce
+ hostPath:
+   path: "/var/lib/mysql"
+
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+ name: mysql-db-pv2
+ namespace: default
+ labels:
+   type: local
+spec:
+ capacity:
+   storage: 15Gi
+ accessModes:
+   - ReadWriteOnce
+ hostPath:
+   path: "/var/lib/mysql"
+
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+ name: mysql-db-pv3
+ namespace: default
+ labels:
+   type: local
+spec:
+ capacity:
+   storage: 15Gi
+ accessModes:
+   - ReadWriteOnce
+ hostPath:
+   path: "/var/lib/mysql"
+
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+ name: mysql-db-pv4
+ namespace: default
+ labels:
+   type: local
+spec:
+ capacity:
+   storage: 15Gi
+ accessModes:
+   - ReadWriteOnce
+ hostPath:
+   path: "/var/lib/mysql"
+---
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+ name: mysql-db-pv5
+ namespace: default
+ labels:
+   type: local
+spec:
+ capacity:
+   storage: 15Gi
+ accessModes:
+   - ReadWriteOnce
+ hostPath:
+   path: "/var/lib/mysql"
+
