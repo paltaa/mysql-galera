@@ -4,12 +4,8 @@ metadata:
   name: mysql-config
   namespace: default
 data:
-  GALERA_CLUSTER: "true"
-  WSREP_CLUSTER_ADDRESS: gcomm://
   WSREP_SST_USER: sst
   WSREP_SST_PASSWORD: sst
   MYSQL_USER: mysql
   MYSQL_PASSWORD: mysql
   MYSQL_ROOT_PASSWORD: c-krit
-
-  
