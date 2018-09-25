@@ -51,10 +51,12 @@ spec:
           securityContext:
             capabilities: {}
             privileged: true #privileged required for mount
-      volumes:
-        - name: mysql-persistent-storage-3
-          persistentVolumeClaim:
-            claimName: claim-galera-3
+
+
+       volumes:
+       - name: mysql-persistent-storage-3
+         persistentVolumeClaim:
+           claimName: claim-galera-3
 
 ---
 
