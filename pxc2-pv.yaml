@@ -15,7 +15,8 @@ spec:
     - port: 4568
       name: incremental-state-transfer
   selector:
-    node: pxc-node1
+    node: pxc-node2
+
 ---
 apiVersion: v1
 kind: ReplicationController
@@ -34,7 +35,7 @@ spec:
             limits:
               cpu: 0.3
           image: capttofu/percona_xtradb_cluster_5_6:beta
-          name: pxc-node1
+          name: pxc-node2
           ports:
             - containerPort: 3306
             - containerPort: 4444
@@ -49,6 +50,7 @@ spec:
           securityContext:
             capabilities: {}
             privileged: true #privileged required for mount
+
       volumes:
       - name: mysql-persistent-storage-2
         persistentVolumeClaim:
@@ -59,6 +61,8 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: claim-galera-2
+  labels:
+    type: local
 spec:
   accessModes:
     - ReadWriteOnce

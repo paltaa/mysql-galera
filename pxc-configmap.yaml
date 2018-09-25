@@ -11,3 +11,5 @@ data:
   MYSQL_USER: mysql
   MYSQL_PASSWORD: mysql
   MYSQL_ROOT_PASSWORD: c-krit
+
+  
