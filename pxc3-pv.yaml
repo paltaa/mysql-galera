@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pxc-node3
-  labels: 
+  labels:
     node: pxc-node3
 spec:
   ports:
@@ -12,28 +12,28 @@ spec:
     - port: 4444
       name: state-snapshot-transfer
     - port: 4567
-      name: replication-traffic 
+      name: replication-traffic
     - port: 4568
-      name: incremental-state-transfer 
+      name: incremental-state-transfer
   selector:
-    node: pxc-node3 
+    node: pxc-node3
 
 ---
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: pxc-node3 
+  name: pxc-node3
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        node: pxc-node3 
+        node: pxc-node3
         unit: pxc-cluster
     spec:
       containers:
         - resources:
-            limits: 
+            limits:
               cpu: 0.3
           image: capttofu/percona_xtradb_cluster_5_6:beta
           name: pxc-node3
@@ -42,27 +42,15 @@ spec:
             - containerPort: 4444
             - containerPort: 4567
             - containerPort: 4568
-          env:
-            - name: GALERA_CLUSTER
-              value: "true"
-            - name: WSREP_CLUSTER_ADDRESS
-              value: gcomm://
-            - name: WSREP_SST_USER
-              value: sst
-            - name: WSREP_SST_PASSWORD
-              value: sst
-            - name: MYSQL_USER
-              value: mysql
-            - name: MYSQL_PASSWORD
-              value: mysql
-            - name: MYSQL_ROOT_PASSWORD
-              value: c-krit 
-          volumeMounts:
+          envFrom:
+          - configMapRef:
+              name: mysql-config
+        volumeMounts:
             - name: mysql-persistent-storage-3
               mountPath: /var/lib
           securityContext:
             capabilities: {}
-            privileged: true #privileged required for mount  
+            privileged: true #privileged required for mount
       volumes:
         - name: mysql-persistent-storage-3
           persistentVolumeClaim:
@@ -82,5 +70,3 @@ spec:
   resources:
     requests:
       storage: 4Gi
-
- 
