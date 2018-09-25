@@ -41,7 +41,7 @@ spec:
             - containerPort: 4567
             - containerPort: 4568
           envFrom:
-          - ConfigMapRef:
+          - configMapRef:
               name: mysql-config
           volumeMounts:
             - name: mysql-persistent-storage-1
@@ -62,7 +62,6 @@ metadata:
 spec:
   accessModes:
     - ReadWriteOnce
-  storageClassName: slow
   resources:
     requests:
       storage: 4Gi
