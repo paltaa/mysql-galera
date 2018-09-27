@@ -1,10 +1,11 @@
 kind: PersistentVolume
 apiVersion: v1
 metadata:
- name: mysql-db-pv
+ name: mysql-db-pv1
  namespace: default
  labels:
    type: local
+   name: pxc1
 spec:
  capacity:
    storage: 15Gi
@@ -21,6 +22,7 @@ metadata:
  namespace: default
  labels:
    type: local
+   name: pxc2
 spec:
  capacity:
    storage: 15Gi
@@ -37,6 +39,7 @@ metadata:
  namespace: default
  labels:
    type: local
+   name: pxc3
 spec:
  capacity:
    storage: 15Gi

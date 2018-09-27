@@ -69,3 +69,7 @@ spec:
   resources:
     requests:
       storage: 4Gi
+  selector:
+    matchLabels:
+      name: pxc3
+
