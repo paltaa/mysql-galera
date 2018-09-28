@@ -13,7 +13,7 @@ spec:
    - ReadWriteOnce
  hostPath:
    path: "/var/lib/mysql"
-
+ persistentVolumeReclaimPolicy: Retain
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -30,7 +30,7 @@ spec:
    - ReadWriteOnce
  hostPath:
    path: "/var/lib/mysql"
-
+ persistentVolumeReclaimPolicy: Retain
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -47,7 +47,7 @@ spec:
    - ReadWriteOnce
  hostPath:
    path: "/var/lib/mysql"
-
+ persistentVolumeReclaimPolicy: Retain
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -63,6 +63,7 @@ spec:
    - ReadWriteOnce
  hostPath:
    path: "/var/lib/mysql"
+ persistentVolumeReclaimPolicy: Retain
 ---
 kind: PersistentVolume
 apiVersion: v1
@@ -78,4 +79,4 @@ spec:
    - ReadWriteOnce
  hostPath:
    path: "/var/lib/mysql"
-
+ persistentVolumeReclaimPolicy: Retain
