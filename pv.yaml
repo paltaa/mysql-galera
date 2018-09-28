@@ -48,35 +48,4 @@ spec:
  hostPath:
    path: "/var/lib/mysql"
  persistentVolumeReclaimPolicy: Retain
----
-kind: PersistentVolume
-apiVersion: v1
-metadata:
- name: mysql-db-pv4
- namespace: default
- labels:
-   type: local
-spec:
- capacity:
-   storage: 15Gi
- accessModes:
-   - ReadWriteOnce
- hostPath:
-   path: "/var/lib/mysql"
- persistentVolumeReclaimPolicy: Retain
----
-kind: PersistentVolume
-apiVersion: v1
-metadata:
- name: mysql-db-pv5
- namespace: default
- labels:
-   type: local
-spec:
- capacity:
-   storage: 15Gi
- accessModes:
-   - ReadWriteOnce
- hostPath:
-   path: "/var/lib/mysql"
- persistentVolumeReclaimPolicy: Retain
+
