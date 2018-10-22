@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: pxc-node2
+  namespace: whitenfv
   labels:
     node: pxc-node2
 spec:
@@ -22,6 +23,7 @@ apiVersion: v1
 kind: ReplicationController
 metadata:
   name: pxc-node2
+  namespace: whitenfv
 spec:
   replicas: 1
   template:
@@ -61,6 +63,7 @@ kind: PersistentVolumeClaim
 apiVersion: v1
 metadata:
   name: claim-galera-2
+  namespace: whitenfv
   labels:
     type: local
 spec:
@@ -72,4 +75,3 @@ spec:
   selector:
     matchLabels:
       name: pxc2
-

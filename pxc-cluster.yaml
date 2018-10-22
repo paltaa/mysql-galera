@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: pxc-cluster
+  name:  ro-db
+  namespace: whitenfv
   labels:
     unit: pxc-cluster
 spec:

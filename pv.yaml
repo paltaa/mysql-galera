@@ -2,7 +2,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
  name: mysql-db-pv1
- namespace: default
+ namespace: whitenfv
  labels:
    type: local
    name: pxc1
@@ -19,7 +19,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
  name: mysql-db-pv2
- namespace: default
+ namespace: whitenfv
  labels:
    type: local
    name: pxc2
@@ -36,7 +36,7 @@ kind: PersistentVolume
 apiVersion: v1
 metadata:
  name: mysql-db-pv3
- namespace: default
+ namespace: whitenfv
  labels:
    type: local
    name: pxc3
@@ -48,4 +48,3 @@ spec:
  hostPath:
    path: "/var/lib/mysql"
  persistentVolumeReclaimPolicy: Retain
-
