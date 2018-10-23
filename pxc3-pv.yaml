@@ -32,12 +32,11 @@ spec:
         node: pxc-node3
         unit: pxc-cluster
     spec:
+      nodeSelector:
+        number: '2'
       containers:
-        - resources:
-            limits:
-              cpu: 0.3
-          image: capttofu/percona_xtradb_cluster_5_6:beta
-          name: pxc-node2
+        - image: capttofu/percona_xtradb_cluster_5_6:beta
+          name: pxc-node3
           ports:
             - containerPort: 3306
             - containerPort: 4444
