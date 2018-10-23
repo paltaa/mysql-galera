@@ -33,7 +33,7 @@ spec:
         unit: pxc-cluster
     spec:
       nodeSelector:
-        number: '2'
+        number: '3'
       containers:
         - image: capttofu/percona_xtradb_cluster_5_6:beta
           name: pxc-node3
