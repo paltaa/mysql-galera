@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name:  ro-db
   namespace: whitenfv
+
   labels:
     unit: pxc-cluster
 spec:

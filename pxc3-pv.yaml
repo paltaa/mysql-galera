@@ -35,16 +35,28 @@ spec:
       nodeSelector:
         number: '3'
       containers:
-        - image: capttofu/percona_xtradb_cluster_5_6:beta
+        - image: capttofu/percona_xtradb_cluster_5_6:latest
           name: pxc-node3
           ports:
             - containerPort: 3306
             - containerPort: 4444
             - containerPort: 4567
             - containerPort: 4568
-          envFrom:
-          - secretRef:
-              name: mysql-secret
+          env:
+            - name: GALERA_CLUSTER
+              value: "true"
+            - name: WSREP_CLUSTER_ADDRESS
+              value: gcomm://
+            - name: WSREP_SST_USER
+              value: sst
+            - name: WSREP_SST_PASSWORD
+              value: sst
+            - name: MYSQL_USER
+              value: mysql
+            - name: MYSQL_PASSWORD
+              value: mysql
+            - name: MYSQL_ROOT_PASSWORD
+              value: c-krit 
           volumeMounts:
             - name: mysql-persistent-storage-3
               mountPath: /var/lib
